@@ -11,11 +11,18 @@ would his investment be worth in 10-year and 20-year bonds? Assume the 10-year b
 the 20-year bonds pay 4.32%, with each compounding annually.
 """
 
-### all your code below ###
+principal = 33000000000
+rate_ten = 3.96
+rate_twenty = 4.32
+n_ten = 10
+n_twenty = 20
 
+A_ten = principal * ((1 + (rate_ten / 100)) ** n_ten)
+A_twenty = principal * ((1 + (rate_twenty / 100)) ** n_twenty)
 
 # final answer for 10-year
-ten_year_final = None
-
+ten_year_final = A_ten
+print("the ten year final is ", ten_year_final);
 # final answer for 20-year
-twenty_year_final = None
+twenty_year_final = A_twenty
+print("the twenty year final is ", twenty_year_final);

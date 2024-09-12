@@ -16,12 +16,24 @@ list_average = -1
 
 
 # First Loop Here:
+for num in list_one:
+    if num < num + 1:
+        list_max += num
+        print("The min is " + str(list_max))
+
+
 
 
 # Second Loop Here:
+for num in list_one:
+    if num > num + 1:
+        list_min += num
+        print(list_min)
 
 
 # Third Loop Here:
+#for num in list_one:
+
 
 
 

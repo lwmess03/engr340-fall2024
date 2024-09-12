@@ -10,6 +10,9 @@ Note: this problem does not require the "compounding interest" formula from the 
 
 ### Your code here ###
 
-in_state_gift = 0
+in_state_tuition = 30792
+out_state_tuition = 47882
 
-out_state_gift = 0
+in_state_gift = in_state_tuition/.05
+
+out_state_gift = out_state_tuition/.05

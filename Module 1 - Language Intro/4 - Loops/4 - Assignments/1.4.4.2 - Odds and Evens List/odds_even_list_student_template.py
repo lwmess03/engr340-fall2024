@@ -27,6 +27,16 @@ nums = generate_random_int_list(max_length, upper_bound)
 evens_list = []
 odds_list = []
 
+
+for i in nums:
+    if i % 2 == 0:
+        evens_list.append(i)
+    else:
+        odds_list.append(i)
+
+
+
+
 """
 Step 1: Write a FOR loop to iterate through the list nums
 """
