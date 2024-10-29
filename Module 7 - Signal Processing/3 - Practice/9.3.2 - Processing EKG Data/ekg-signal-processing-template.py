@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import scipy as sc
 import numpy as np
 
 """
@@ -18,33 +19,46 @@ signal_filepath = path_to_folder + database_name + ".csv"
 Step #1: load data in matrix from CSV file; skip first two rows. Call the data signal.
 """
 
-signal = 0
-## YOUR CODE HERE ##
+
+signal = np.loadtxt(signal_filepath, skiprows = 2, delimiter = ',')
+elapsed_time = signal[: , 0]
+MLII = signal[: , 1]
+V1 = signal[: , 2]
 
 """
 Step 2: (OPTIONAL) pass data through LOW PASS FILTER (fs=250Hz, fc=15, N=6). These may not be correctly in radians
 """
+"""
+N = 6
+fc = 15
+fs = 250
+a, b  = sc.signal.butter(N, fc, btype='low', fs=fs )
 
-## YOUR CODE HERE ##
+filtered_data = sc.signal.filtfilt(a, b, V1)
+
+"""
 
 """
 Step 3: Pass data through weighted differentiator
 """
 
-## YOUR CODE HERE ##
+difference = np.diff(V1)
 
 
 """
 Step 4: Square the results of the previous step
 """
- ## YOUR CODE HERE ##
+square = np.square(difference)
 
 """
 Step 5: Pass a moving filter over your data
 """
 
-## YOUR CODE HERE
+weight = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+moving_average = np.convolve(square, weight)
+
+
 # make a plot of the results. Can change the plot() parameter below to show different intermediate signals
 plt.title('Process Signal for ' + database_name)
-plt.plot(signal)
+plt.plot(moving_average)
 plt.show()
