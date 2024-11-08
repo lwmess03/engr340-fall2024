@@ -59,6 +59,8 @@ moving_average = np.convolve(square, weight)
 
 
 # make a plot of the results. Can change the plot() parameter below to show different intermediate signals
-plt.title('Process Signal for ' + database_name)
+plt.title('Process moving filter for ' + database_name)
 plt.plot(moving_average)
+plt.xlabel("Time")
+plt.ylabel("mV")
 plt.show()
